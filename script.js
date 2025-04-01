@@ -111,23 +111,23 @@ function LightMode() {
     body.style.backgroundColor = "rgb(242,242,242)";
     Color("black");
     HideShow("hide");
-    
+
 }
 
-const Color = (color) =>{
+const Color = (color) => {
     buttonArray.forEach(button => {
         button.style.color = color;
     })
     display.style.color = color;
 }
 
-const HideShow = (arg) =>{
-    bg.forEach(Bg =>{
-        if (arg === "hide"){
+const HideShow = (arg) => {
+    bg.forEach(Bg => {
+        if (arg === "hide") {
             Bg.classList.remove("show");
             Bg.classList.add("hide");
         }
-        else if (arg === "show"){ 
+        else if (arg === "show") {
             Bg.classList.remove("hide");
             Bg.classList.add("show");
         }
