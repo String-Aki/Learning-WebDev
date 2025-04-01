@@ -3,7 +3,7 @@ body{
     align-items: center;
     justify-content: center;
 
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(242, 242, 242);
 
 }
 
@@ -14,7 +14,8 @@ body{
     justify-content: center;
     margin-top: 35px;
 
-    background: rgba(144, 144, 144, 0.2);
+    background: rgba(144, 144, 144, 0.1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
     height: 40rem;
     width: 30rem;
     border-radius: 10px;
@@ -31,7 +32,7 @@ body{
     margin-top:50px;
     height: 30rem;
     width: 25rem;
-    backdrop-filter: blur(40px);
+    /* backdrop-filter: blur(40px); */
     background:transparent;
 }
 
@@ -40,19 +41,36 @@ body{
     top: 1.3rem;
     width: 20rem;
     height: 4rem;
-    backdrop-filter: blur(50px);
+    /* backdrop-filter: blur(50px); */
     background: transparent;
     font-size: 28px;
-
+    border-radius: 5px;
+    color:black;
 }
+
 
 .button{
     border-radius: 5px;
     background: transparent;
-    backdrop-filter: blur(40px);
+    /* backdrop-filter: blur(40px); */
     font-size: 16px;
-    
 }
+
+.bg{
+    opacity: 0;
+}
+
+.hide {
+    transition:0.8s ease-in-out;
+    opacity:0;
+}
+
+.show {
+    transition: 0.8s ease-in-out;
+    opacity: 100;
+}
+
+
 
 .bg1{
     position: absolute;
@@ -67,6 +85,7 @@ body{
      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
       rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+       
 }
 
 .bg2{
@@ -74,19 +93,27 @@ body{
     top: 2%;
     left: 59%;
     background-color: red;
-    height: 15rem;
-    width: 15rem;
+    height: 20rem;
+    width: 20rem;
     border-radius: 50%;
     z-index: 2;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
       rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+       
+}
+
+.bg3{
+    position: absolute;
+    top:12rem;
+    height: 26rem;
+    width: 25rem;
+    border-radius: 10%;
+    background-color: rgb(0,187,187);
+    /* background-color: rgb(153, 75, 182); */
+    
 }
 
 
-
-.bg1, .bg2{
-    display:none;
-}
 

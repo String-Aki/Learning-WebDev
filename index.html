@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a4b7025b99.js" crossorigin="anonymous"></script>
     <title>Calculator</title>
 </head>
 <body>
     
-    <div class="calculator">
+    <div class="calculator" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
         <input type="text" id="display" disabled/>
         <div class="BasePlate">
             <!-- buttons here -->
         </div>
     </div>
 
-    <div class ="bg1" ></div>
-    <div class ="bg2" ></div>
-    <div class ="bg3" ></div>
+    <div class ="bg1 bg"  ></div>
+    <div class ="bg2 bg" ></div>
+    <div class ="bg3 bg" ></div>
 
+    <script id="tilt" type="text/javascript" src="vanilla-tilt.js" ></script>
     <script src="script.js"></script>
+    <script type="text/javascript">
+	    VanillaTilt.init(document.querySelector(".calculator"), {
+		max: 25,
+		speed: 400
+	});
+    </script>
 </body>
 </html>
 

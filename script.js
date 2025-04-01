@@ -1,28 +1,38 @@
 const container = document.querySelector('.BasePlate');
 const display = document.getElementById('display');
+const bg = document.querySelectorAll('.bg');
+const body = document.body;
 
 let num1;
 let num2;
 let operator;
+let color;
 
 const ButtonLabel = [
     "C", "%", "Del", "/",
     "7", "8", "9", "*",
     "4", "5", "6", "-",
     "1", "2", "3", "+",
-    "0", ".", "=", "M"
+    "0", ".", "=", ""
 ];
 
 ButtonLabel.forEach(label => {
     const button = document.createElement('button');
+
+    button.style.color = color;
     button.textContent = label;
-    button.className = 'button';
+    if (label === "") {
+        button.className = 'mode button fa-solid fa-sun fa-xl';
+    }
+    else {
+        button.className = 'button';
+    }
     container.appendChild(button);
 });
 
 const buttons = document.querySelectorAll('.button');
 const buttonArray = Array.from(buttons);
-// let color;
+
 
 if (buttons)
     buttons.forEach(button => {
@@ -55,7 +65,15 @@ if (buttons)
                     }
                     break;
 
-                case "M":
+                case "":
+                    if (!toggle) {
+                        DarkMode();
+                        toggle = true;
+                    }
+                    else {
+                        LightMode();
+                        toggle = false;
+                    }
                     break;
 
                 default: if (!isNaN(button.textContent) || button.textContent === "." && !display.value.includes(".")) {
@@ -75,4 +93,44 @@ const operations = {
     "*": (a, b) => a * b,
     "/": (a, b) => a / b,
     "%": (a, b) => a % b
+}
+let toggle;
+
+function DarkMode() {
+    buttonArray[19].classList.remove("fa-sun");
+    buttonArray[19].classList.add("fa-moon");
+    body.style.backgroundColor = "rgb(68,68,68)";
+    Color("white");
+    HideShow("show");
+
+}
+
+function LightMode() {
+    buttonArray[19].classList.remove("fa-moon");
+    buttonArray[19].classList.add("fa-sun");
+    body.style.backgroundColor = "rgb(242,242,242)";
+    Color("black");
+    HideShow("hide");
+    
+}
+
+const Color = (color) =>{
+    buttonArray.forEach(button => {
+        button.style.color = color;
+    })
+    display.style.color = color;
+}
+
+const HideShow = (arg) =>{
+    bg.forEach(Bg =>{
+        if (arg === "hide"){
+            Bg.classList.remove("show");
+            Bg.classList.add("hide");
+        }
+        else if (arg === "show"){ 
+            Bg.classList.remove("hide");
+            Bg.classList.add("show");
+        }
+
+    })
 }
