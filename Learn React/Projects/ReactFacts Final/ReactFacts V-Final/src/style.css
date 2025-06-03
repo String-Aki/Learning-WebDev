@@ -1,0 +1,59 @@
+body {
+    margin:0;
+    color:white;
+    background-color: #282D35;
+    font-family: Inter, san-serif;
+
+}
+
+header {
+    background-color: #21222A;
+}
+
+nav{
+    display:flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+    margin: 0 40px 0 50px;
+}
+
+span {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+main {
+    padding: 60px 80px;
+    background: url(./assets/react-logo-half.png) no-repeat center right;
+    background-size: 15rem;
+
+}
+
+
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    padding-bottom: 1rem;
+
+}
+
+ul {
+    padding-top: 10px;
+}
+
+li {
+    padding: 15px;
+    font-size: 2rem;
+}
+
+li::marker {
+    color: #61DAFB;
+    font-size: 2.2rem; 
+}
+
+
